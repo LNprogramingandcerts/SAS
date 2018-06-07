@@ -1,0 +1,33 @@
+Using SAS Studio
+
+
+Try Using SAS Studio
+
+In this short exercise, you try the programming tasks you'll perform in this course - you browse data, submit code, check the log, and view results. If you are new to programming with SAS Studio, click the Show Solution button and follow the steps.
+
+    Open SAS Studio.
+
+    Open the Cars data set in the Sashelp library and browse the data. How many rows are in the data set?
+        Click Libraries in the navigation panel and open the Sashelp library, then open the Cars data.
+        Scroll through the data. There are 428 rows in the Cars data set.
+        Close the data viewer.
+
+    The example program below creates a report that lists the number and percentage of each type of car in the data set Sashelp.Cars. Copy and paste the program into the Editor window and submit it.
+
+    title "Car Inventory by Type";
+    proc freq data=sashelp.cars;
+       tables Type / nocum;
+    run;
+    title;
+
+        Copy the code (highlight the code and press Crtl-C) and paste it (press Ctrl-V) into the Code tab.
+        Click the Run button to submit the code to SAS.
+
+    View the log to verify that the code ran successfully. What note do you see?
+        Click the Log tab.
+        Check the Log Summary to be sure that there are no warning or error messages in the log. In the list of notes, you should see the following note:
+        There were 428 observations read from the data set SASHELP.CARS.
+
+    View the results. The Frequency column represents the number of each type of car. Which type had the highest number of cars in the data?
+        Click the Results tab.
+        In this data set, most cars have the type Sedan -- 262 sedans accounted for about 61% of the cars in the data.
