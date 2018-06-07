@@ -1,0 +1,58 @@
+Setup Instructions for SAS Studio
+
+To complete the practices in this course, you must follow these steps to set up the practice files for SAS Studio.
+
+IMPORTANT: You must perform the following tasks in the same SAS Studio session. Do not close your browser until you have completed both tasks or you will need to start again.
+Task 1: Create a folder for your practice files and define the course libraries.
+
+    Start SAS Studio.
+
+    At the top of the Files and Folders pane, click New New and select Folder. Note the path to the location of your folder.
+
+    In the Name box, type ECSTAT0, and then click Save.
+
+    Copy and paste the following two LIBNAME statements into the Code tab in SAS Studio. Don't run the code yet - you must edit the code before you run it.
+
+    libname statdata "FILEPATH"; 
+    libname library "FILEPATH";
+        
+
+    In the Files and Folders pane, right-click ECSTAT0 and select Properties. Highlight the filepath shown in Location and copy it.
+
+    In the Code tab in SAS Studio, highlight FILEPATH in each LIBNAME statement and paste the filepath you copied in the previous step.
+
+    Click Run Submit tool to submit the statements to SAS.
+
+    Check the log to verify that SAS successfully assigned the librefs Statdata and Library. If the program does not run successfully, make sure you created the folder that you are referencing, and review your program for errors. Correct the errors and resubmit the program.
+
+    Click the Code tab and click Add to My Snippets My Snippets tool. In the Name box, type setup and click Save. In the confirmation window, click Close.
+
+    Close the setup program tab in the workspace. 
+
+IMPORTANT: Each time you start SAS Studio, open the Snippets panel and expand the My Snippets folder. Double-click the setup snippet to add it to the Code tab. Run the code to define the statdata library so that you have access to your practice files.
+Task 2: Create the practice files for the course — you only have to do this once.
+
+    In the Files and Folders pane, click New New tool and select SAS Program.
+
+    Click here to open a popup window with the SAS code that creates your practice data. Select all of the code (Ctrl+A or Command+A) and then copy it (Ctrl+C or Command+C).
+
+    Paste the code (Ctrl+V or Command+V) into the Code tab in SAS Studio.
+
+    Click RunSubmit tool to submit the program to SAS. This program creates the practice files in the ECSTAT0 folder.
+
+    After the code runs, check the log to verify that there are no errors or warnings. You should see this line in the log: Your practice files are stored in this location: with the path to your practice files. If you are asked to specify my-file-path during this course, you should specify the location shown in the log. This is the filepath to your ECSTAT0 folder.
+
+    NOTE: If your program does not run successfully, make sure you completed all the steps in Task 1 correctly.
+
+    On the Code tab, click Clear All code Clear All tool. You are ready to work in SAS Studio.
+
+    NOTE: Unless you delete your practice files folder, you do not need to perform this task again.
+
+You have set up your practice data. Each time you start SAS Studio, open the Snippets panel and expand the My Snippets folder. Double-click the setup snippet to add it to the Code tab. After you run the program, you can access your practice data for the course. Each practice page reminds you to define the statdata library and has a link to this setup page.
+
+
+
+
+Copyright © 2017 SAS Institute Inc., Cary, NC, USA. All rights reserved.
+
+ 
