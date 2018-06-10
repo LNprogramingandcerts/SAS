@@ -1,0 +1,23 @@
+Make use of Proc Means in SAS
+
+Program:
+proc means data= statdata.testscores
+			maxdec = 2 fw = 10 printalltypes;
+		class Gender;
+		var SATScore;
+		title 'Descriptive Statistics Using PROC MEANS';
+run;
+Results
+
+
+
+Descriptive Statistics Using PROC MEANS
+
+The MEANS Procedure
+Analysis Variable : SATScore
+N Obs 	N 	Mean 	Std Dev 	Minimum 	Maximum
+80 	80 	1190.63 	147.06 	890.00 	1600.00
+Analysis Variable : SATScore
+Gender 	N Obs 	N 	Mean 	Std Dev 	Minimum 	Maximum
+Female 	40 	40 	1221.00 	157.40 	910.00 	1590.00
+Male 	40 	40 	1160.25 	130.92 	890.00 	1600.00
