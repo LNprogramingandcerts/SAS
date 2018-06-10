@@ -1,0 +1,45 @@
+Program:
+
+Proc print data= statdata.testscores (obs=10);
+title 'Listing of the SAT Data Set';
+Run;
+title
+
+Results:
+
+Listing of the SAT Data Set
+Obs 	Gender 	SATScore 	IDNumber
+1 	Male 	1170 	61469897
+2 	Female 	1090 	33081197
+3 	Male 	1240 	68137597
+4 	Female 	1000 	37070397
+5 	Male 	1210 	64608797
+6 	Female 	970 	60714297
+7 	Male 	1020 	16907997
+8 	Female 	1490 	9589297
+9 	Male 	1200 	93891897
+10 	Female 	1260 	85859397
+
+Now we want to request the sample size, mean, median, standard deviation, variance, lower quartile and upper quartile
+
+Program:
+proc means data= statdata.testscores
+			maxdec = 2 fw = 10 printalltypes
+		n mean median std var q1 q3;
+		class Gender;
+		var SATScore;
+		title 'Descriptive Statistics Using PROC MEANS';
+run;
+
+
+Results:
+Descriptive Statistics Using PROC MEANS
+
+The MEANS Procedure
+Analysis Variable : SATScore
+N Obs 	N 	Mean 	Median 	Std Dev 	Variance 	Lower Quartile 	Upper Quartile
+80 	80 	1190.63 	1170.00 	147.06 	21626.19 	1085.00 	1280.00
+Analysis Variable : SATScore
+Gender 	N Obs 	N 	Mean 	Median 	Std Dev 	Variance 	Lower Quartile 	Upper Quartile
+Female 	40 	40 	1221.00 	1215.00 	157.40 	24773.33 	1100.00 	1315.00
+Male 	40 	40 	1160.25 	1145.00 	130.92 	17140.96 	1050.00 	1240.00
