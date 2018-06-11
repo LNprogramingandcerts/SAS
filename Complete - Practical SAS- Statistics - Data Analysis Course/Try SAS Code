@@ -1,0 +1,32 @@
+Creating Libraries in SAS
+
+libname mylib 'c:\mydata'
+*libname names the library and 'c:\mydata' is the physical location of the library*
+
+Sas Studio Program:
+
+libname L 'c:\new';
+
+*Created a library called 'L' at the physical location 'c:\new'*
+
+data work.student;
+*the program is in work library which does not save the work*
+input name $ age mark;
+datalines;
+john 20 80
+Marray 19 90
+;
+run;
+
+
+Second Program:
+libname L 'c:\new';
+
+data L.student;
+*the program to the L library*
+input name $ age mark;
+datalines;
+john 20 80
+Marray 19 90
+;
+run;
