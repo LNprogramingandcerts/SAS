@@ -1,0 +1,37 @@
+Question
+You want to understand if true mean body temperature is 98.6 and whether women's body temperatures are the same as men's body temperatures. The Statdata.NormTemp data set contains the data that you need.
+
+Reminder: Make sure you've defined the Statdata library.
+
+    Use PROC MEANS to determine the overall mean and standard deviation of the variable BodyTemp in the data set NormTemp. Ensure that SAS displays statistics for all requested combinations of the class variable.
+
+The overall mean is 98.25 and std Dev is .73
+    Do the mean values seem to differ between men and women?
+The mean values differ very little
+
+    What is the interquartile range of body temperature? 
+    The interquartile range is (98.70 - 97.80) = .90
+    
+    SaS Code:
+     proc means data=library.NORMTEMP
+              maxdec=2 fw=10 printalltypes
+              n mean std q1 q3;
+      var BodyTemp;
+      class Gender;
+      title 'Selected Descriptive Statistics for Body Temp';
+   run;
+   title;
+   
+   Results:
+   
+
+Selected Descriptive Statistics for Body Temp
+
+The MEANS Procedure
+Analysis Variable : BodyTemp
+N Obs 	N 	Mean 	Std Dev 	Lower Quartile 	Upper Quartile
+130 	130 	98.25 	0.73 	97.80 	98.70
+Analysis Variable : BodyTemp
+Gender 	N Obs 	N 	Mean 	Std Dev 	Lower Quartile 	Upper Quartile
+Female 	65 	65 	98.39 	0.74 	98.00 	98.80
+Male 	65 	65 	98.10 	0.70 	97.60 	98.60
