@@ -1,0 +1,98 @@
+Use the Univariate code
+
+CODE:
+proc univariate data=statdata.testscores;
+var SATScore;
+histogram SATScore / normal (mu=est sigma=est);
+inset skewness kurtosis / poistin=ne;
+probplot SATScore / normal (mu=est sigma=est);
+inset skewness kurtosis;
+title 'Descriptive Statistics Using PROC UNIVARIATE'
+run;
+
+
+SAS Result;
+
+
+
+Descriptive Statistics Using PROC UNIVARIATE run
+
+The UNIVARIATE Procedure
+
+Variable: SATScore
+Moments
+N 	80 	Sum Weights 	80
+Mean 	1190.625 	Sum Observations 	95250
+Std Deviation 	147.058447 	Variance 	21626.1867
+Skewness 	0.64202018 	Kurtosis 	0.42409987
+Uncorrected SS 	115115500 	Corrected SS 	1708468.75
+Coeff Variation 	12.3513656 	Std Error Mean 	16.4416342
+Basic Statistical Measures
+Location 	Variability
+Mean 	1190.625 	Std Deviation 	147.05845
+Median 	1170.000 	Variance 	21626
+Mode 	1050.000 	Range 	710.00000
+  	  	Interquartile Range 	195.00000
+Tests for Location: Mu0=0
+Test 	Statistic 	p Value
+Student's t 	t 	72.41525 	Pr > |t| 	<.0001
+Sign 	M 	40 	Pr >= |M| 	<.0001
+Signed Rank 	S 	1620 	Pr >= |S| 	<.0001
+Quantiles (Definition 5)
+Level 	Quantile
+100% Max 	1600
+99% 	1600
+95% 	1505
+90% 	1375
+75% Q3 	1280
+50% Median 	1170
+25% Q1 	1085
+10% 	1020
+5% 	995
+1% 	890
+0% Min 	890
+Extreme Observations
+Lowest 	Highest
+Value 	Obs 	Value 	Obs
+890 	69 	1490 	8
+910 	74 	1520 	42
+970 	6 	1520 	54
+990 	51 	1590 	70
+1000 	4 	1600 	25
+
+Descriptive Statistics Using PROC UNIVARIATE run
+
+The UNIVARIATE Procedure
+Histogram for SATScore
+
+Descriptive Statistics Using PROC UNIVARIATE run
+
+The UNIVARIATE Procedure
+
+Fitted Normal Distribution for SATScore
+Parameters for Normal Distribution
+Parameter 	Symbol 	Estimate
+Mean 	Mu 	1190.625
+Std Dev 	Sigma 	147.0584
+Goodness-of-Fit Tests for Normal Distribution
+Test 	Statistic 	p Value
+Kolmogorov-Smirnov 	D 	0.08382224 	Pr > D 	>0.150
+Cramer-von Mises 	W-Sq 	0.09964577 	Pr > W-Sq 	0.114
+Anderson-Darling 	A-Sq 	0.70124822 	Pr > A-Sq 	0.068
+Quantiles for Normal Distribution
+Percent 	Quantile
+Observed 	Estimated
+1.0 	890.000 	848.516
+5.0 	995.000 	948.735
+10.0 	1020.000 	1002.162
+25.0 	1085.000 	1091.436
+50.0 	1170.000 	1190.625
+75.0 	1280.000 	1289.814
+90.0 	1375.000 	1379.088
+95.0 	1505.000 	1432.515
+99.0 	1600.000 	1532.734
+
+Descriptive Statistics Using PROC UNIVARIATE run
+
+The UNIVARIATE Procedure
+Probability Plot for SATScore
